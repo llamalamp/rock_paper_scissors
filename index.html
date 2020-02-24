@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <meta charset="UTF-8"/>
+        <script>
+            const choices = ['rock','paper','scissors'];
+            const computerSelection = choices[Math.floor(Math.random() * choices.length)];
+            const playerSelection ='paper';
+            let outcome =('');
+            let lPlayerSelection = playerSelection.toLocaleLowerCase();
+
+            function playRound(computerSelection, lPlayerSelection) {
+                if ((playerSelection == 'rock' && computerSelection=='rock') ||
+                 (playerSelection == 'paper' && computerSelection=='paper') ||
+                 (playerSelection == 'scissors' && computerSelection=='scissors'))
+                {outcome= "You Tie!"} 
+                else if ((playerSelection == 'rock' && computerSelection=='paper') ||
+                 (playerSelection == 'paper' && computerSelection=='scissors') ||
+                 (playerSelection == 'scissors' && computerSelection=='rock'))
+                {outcome= "You Win!"}
+                else {outcome= "You lose!"}  
+                  return outcome;
+                  }
+                console.log(playRound(computerSelection, lPlayerSelection))
+
+            //function playRound (playerSelection, computerSelection) { 
+                
+        </script>
+
+    </head>
+    
+</html>
