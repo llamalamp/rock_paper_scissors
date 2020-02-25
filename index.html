@@ -4,28 +4,62 @@
         <title>Rock Paper Scissors</title>
         <meta charset="UTF-8"/>
         <script>
+            
+            //variables
             const choices = ['rock','paper','scissors'];
-            const computerSelection = choices[Math.floor(Math.random() * choices.length)];
-            const playerSelection ='paper';
-            let outcome =('');
-            let lPlayerSelection = playerSelection.toLocaleLowerCase();
+            let outcome = playRound;
+            let computerSelection= computerPlay;
+            let lPlayerSelection= userPlay;
+            let result= playRound(lPlayerSelection,computerSelection);
+
+            function computerPlay () {
+                const computerSelection = choices[Math.floor(Math.random() * choices.length)];
+                return computerSelection;
+            }
+
+            function userPlay () {
+                const playerSelection =prompt('Rock,paper,or scissors?');
+                let lPlayerSelection = playerSelection.toLowerCase();
+                return lPlayerSelection;
+            }
 
             function playRound(computerSelection, lPlayerSelection) {
-                if ((playerSelection == 'rock' && computerSelection=='rock') ||
-                 (playerSelection == 'paper' && computerSelection=='paper') ||
-                 (playerSelection == 'scissors' && computerSelection=='scissors'))
-                {outcome= "You Tie!"} 
-                else if ((playerSelection == 'rock' && computerSelection=='paper') ||
-                 (playerSelection == 'paper' && computerSelection=='scissors') ||
-                 (playerSelection == 'scissors' && computerSelection=='rock'))
-                {outcome= "You Win!"}
-                else {outcome= "You lose!"}  
+                if ((lPlayerSelection == 'rock' && computerSelection=='rock') ||
+                 (lPlayerSelection == 'paper' && computerSelection=='paper') ||
+                 (lPlayerSelection == 'scissors' && computerSelection=='scissors'))
+                {outcome= "Tie"} 
+                else if ((lPlayerSelection == 'rock' && computerSelection=='scissors') ||
+                 (lPlayerSelection == 'paper' && computerSelection=='rock') ||
+                 (lPlayerSelection == 'scissors' && computerSelection=='paper'))
+                {outcome= "Win"}
+                else if ((lPlayerSelection == 'rock' && computerSelection=='paper') ||
+                 (lPlayerSelection == 'paper' && computerSelection=='scissors') ||
+                 (lPlayerSelection == 'scissors' && computerSelection=='rock'))
+                {outcome= "Lose"}
+                else {outcome= "You gotta enter the right thing fool"}  
                   return outcome;
                   }
-                console.log(playRound(computerSelection, lPlayerSelection))
 
-            //function playRound (playerSelection, computerSelection) { 
-                
+            function game () {
+                for (i=0; i<5; i++) {
+                    let playerMove = userPlay();
+                    let computerMove = computerPlay();
+                    let compScore = 0;
+                    let userScore = 0;
+                    //Can't figure out why the scores not working right. Will come back to it. 
+                    if (outcome=='Lose') {
+                        compScore++;
+                    } 
+                    else if (outcome=='Win') {
+                        userScore++;
+                    }
+                    console.log('Player:'+ playerMove);
+                    console.log('Computer:'+ computerMove);
+                    console.log(playRound(playerMove,computerMove));
+                    console.log('Score:'+ userScore + compScore);
+                }
+            }
+            game();
         </script>
 
     </head>
