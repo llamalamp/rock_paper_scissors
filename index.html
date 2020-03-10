@@ -3,63 +3,7 @@
     <head>
         <title>Rock Paper Scissors</title>
         <meta charset="UTF-8"/>
-        <script>
-            
-            //variables
-            const choices = ['rock','paper','scissors'];
-            let outcome = playRound;
-            let computerSelection= computerPlay;
-            let lPlayerSelection= userPlay;
-            let result= playRound(lPlayerSelection,computerSelection);
-
-            function computerPlay () {
-                const computerSelection = choices[Math.floor(Math.random() * choices.length)];
-                return computerSelection;
-            }
-
-            function userPlay () {
-                const playerSelection =prompt('Rock,paper,or scissors?');
-                let lPlayerSelection = playerSelection.toLowerCase();
-                return lPlayerSelection;
-            }
-
-            function playRound(computerSelection, lPlayerSelection) {
-                if ((lPlayerSelection == 'rock' && computerSelection=='rock') ||
-                 (lPlayerSelection == 'paper' && computerSelection=='paper') ||
-                 (lPlayerSelection == 'scissors' && computerSelection=='scissors'))
-                {outcome= "Tie"} 
-                else if ((lPlayerSelection == 'rock' && computerSelection=='scissors') ||
-                 (lPlayerSelection == 'paper' && computerSelection=='rock') ||
-                 (lPlayerSelection == 'scissors' && computerSelection=='paper'))
-                {outcome= "Win"}
-                else if ((lPlayerSelection == 'rock' && computerSelection=='paper') ||
-                 (lPlayerSelection == 'paper' && computerSelection=='scissors') ||
-                 (lPlayerSelection == 'scissors' && computerSelection=='rock'))
-                {outcome= "Lose"}
-                else {outcome= "You gotta enter the right thing fool"}  
-                  return outcome;
-                  }
-
-            function game () {
-                for (i=0; i<5; i++) {
-                    let playerMove = userPlay();
-                    let computerMove = computerPlay();
-                    let compScore = 0;
-                    let userScore = 0;
-                    //Can't figure out why the scores not working right. Will come back to it. 
-                    if (outcome=='Lose') {
-                        compScore++;
-                    } 
-                    else if (outcome=='Win') {
-                        userScore++;
-                    }
-                    console.log('Player:'+ playerMove);
-                    console.log('Computer:'+ computerMove);
-                    console.log(playRound(playerMove,computerMove));
-                    console.log('Score:'+ userScore + compScore);
-                }
-            }
-            game();
+        <script src='javascript.js'>
         </script>
 
     </head>
