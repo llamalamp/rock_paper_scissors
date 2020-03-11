@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel= 'stylesheet' href='stylesheet.css'>
         <title>Rock Paper Scissors</title>
         <meta charset="UTF-8"/>
+       
+    </head>
+    <body id='bodyBG'>
+        
+        <div id=containerOne>
+            <div id=userChoice>
+                <h2><a href="https://fontmeme.com/spongebob-squarepants-font/"><img src="https://fontmeme.com/permalink/200311/7845c6d74ccd1d7ecc44e708b9001ab5.png" alt="spongebob-squarepants-font" border="0"></a></h2>
+                <h3>First to 5 wins!</h3>
+                <input type="image" id="rockImg" alt="Rock"  onclick="playerRock(this)"
+                src="https://vignette.wikia.nocookie.net/spongebob/images/4/45/Pete_the_rock.png/revision/latest?cb=20141115223905" >
+                
+                <input type="image" id="paperImg" alt="Paper"  onclick='playerPaper(this)'
+                src="https://vignette.wikia.nocookie.net/spongebob/images/b/b7/The_Paper_014.png/revision/latest?cb=20191111160748">
+                
+                <input type="image" id="scissorsImg" alt="Scissors"  onclick="playerScissors(this)"
+       src="https://vignette.wikia.nocookie.net/spongebob/images/2/2a/Bikini_Bottom_Scissor_Works.png/revision/latest?cb=20150709014043">
+            </div></div>
+
+            <div id='containerTwo'>
+
+            <div id= "compChoice">
+                <p><img src="https://fontmeme.com/permalink/200311/0210524e713c32584bacae722e66601c.png" alt="spongebob-squarepants-font" border="0"></a></p>
+                
+                <br> <img id='compImg' src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT8FU-t9CakI6APCGI6AUmbsq2iGbIQZHp1lPUdkeNoeYs5rwXB'>
+            </div>
+            
+            <div id= 'score'>
+                <p>Score Box</p>
+                <p id='lastRound'></p>
+                <p id='playerScore'></p>
+                <p id='computerScore'></p>
+            </div>
+        </div>
         <script src='javascript.js'>
         </script>
-
-    </head>
+    </body>
     
 </html>
